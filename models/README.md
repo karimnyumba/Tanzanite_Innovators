@@ -1,9 +1,4 @@
-# AI MODELLING
-Here's a short README for the folder:
-
----
-
-# AI System
+# AI Crop Recommendation System
 
 ## Overview
 This part focuses on developing an AI system for crop and fertilzer model training and comparison. The repository contains data, model training scripts, and notebooks used for evaluating and comparing different models.
@@ -14,7 +9,8 @@ This part focuses on developing an AI system for crop and fertilzer model traini
 - **Notebooks/**: Jupyter notebooks used for training, evaluating, and comparing models.
   - `modelcomparison.png`: Visualization of model comparison results.
   - `modelscomparison2.png`: Additional visualization of model comparison results
-     ```
+     
+## How to Run
 1. **Install dependencies**:
    Make sure you have Python and Jupyter Notebook installed. Install necessary Python packages using:
    ```bash
@@ -27,17 +23,15 @@ This part focuses on developing an AI system for crop and fertilzer model traini
    jupyter notebook
    ```
 
-## Usage
-- **Data Preparation**: Place your dataset in the `Data/` directory.
-- **Model Training and Evaluation**: Open `notebooks` in Jupyter Notebook and follow the instructions to train and evaluate the models.
-- **Visualization**: Review `modelcomparison.png` and `modelscomparison2.png` for visual insights on model performance.
+## AI recommendation system architecture
+The AI recommendation system architecture depicted consists of a data-driven predictive 
+model pipeline. It begins with Data Acquisition, where raw data is collected from the system. 
+Next, in Preprocessing, this data is cleaned and standardized, which may include handling 
+soil and environmental data. Feature Extraction follows, selecting and formatting the 
+necessary data features for model input. Model Inference then uses these features to make 
+predictions. Finally, postprocessing formats these predictions into interpretable 
+recommendations, which are delivered to the user in Recommendation Delivery.
 
+![Screenshot 2024-07-21 133039](https://github.com/user-attachments/assets/7ae3e866-c033-4302-8afd-1452929aa4dc)
 
-
-### Correlation plots between nutrients and environmental factors
-![HeatMap](https://github.com/Crop-Recommendation-System/AI-system/assets/88351433/7c801eda-a5fc-4b5b-9be2-9871f397c40f)
-
-
-### Clusters from the Training Data
-![cluster](https://github.com/Crop-Recommendation-System/AI-system/assets/88351433/ffe32bd2-4bd9-458d-b10c-218c3da25ddb)
 
