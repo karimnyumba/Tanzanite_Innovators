@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
-import { SiSellfy } from "react-icons/si";
+import { SiSellfy, } from "react-icons/si";
+import { GiFarmTractor } from "react-icons/gi";
+import { FaFacebookF } from 'react-icons/fa';
 import { notify } from "../../utils/helper/notification";
 import Cart from "../../pages/cart";
 import { useCookies } from "react-cookie";
@@ -107,8 +109,8 @@ function Navbar() {
               }
             }}
           >
-            <SiSellfy />
-            <span className="text-sm font-medium hidden md:block">Seller</span>
+           <span className="text-white bg-green-700 p-1 m-1 rounded-sm"> <FaFacebookF  size={15} /></span>
+            <span className="text-sm font-medium hidden md:block">Farmer</span>
             {cookies.seller_access_token && (
               <div
                 className={`absolute ${
@@ -122,7 +124,7 @@ function Navbar() {
                     }}
                   >
                     <a className="block px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0  whitespace-nowrap">
-                      Seller Dashboard
+                      Farmer Dashboard
                     </a>
                   </li>
                   <li
@@ -136,7 +138,7 @@ function Navbar() {
                     }}
                   >
                     <a className="block px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0  whitespace-nowrap">
-                      Seller Logout
+                      Farmer Logout
                     </a>
                   </li>
                 </ul>
