@@ -42,10 +42,10 @@ function LoginAndSignup() {
   }, [isSignInForm]);
 
   return (
-    <section className="flex flex-col-reverse md:flex-row  md:h-screen">
+    <section className="flex flex-col-reverse md:flex-row  md:h-screen ">
       <SideImage type={type} />
-      <div className="flex flex-col w-full lg:w-1/2 items-center justify-center px-6 py-8 lg:py-0">
-        <div className="lg:p-6 space-y-4 md:space-y-6 sm:p-8 w-full">
+      <div className="flex flex-col w-full lg:w-1/2 items-center justify-center px-6 py-8 lg:py-0 ">
+        <div className="lg:p-6 space-y-4 md:space-y-6 sm:p-8 w-full overflow-scroll">
           <FormHeading type={type} isSignInForm={isSignInForm} />
           <form
             className="space-y-4 md:space-y-6 w-full lg:w-3/5 mx-auto"
@@ -96,6 +96,36 @@ function LoginAndSignup() {
                     value={formData.brandName}
                     setFormData={setFormData}
                     toUpdate={"brandName"}
+                  />
+                )}
+                           {type === "seller" && (
+                  <InputTag
+                    label={"Location"}
+                    placeholder={"Tanzania"}
+                    type={"text"}
+                    outlineColor={
+                      type === "seller"
+                        ? "outline-green-700"
+                        : "outline-blue-600"
+                    }
+                    value={formData.brandName}
+                    setFormData={setFormData}
+                    toUpdate={"brandName"}
+                  />
+                )}
+                     {type === "seller" && (
+                  <InputTag
+                    label={"Farm size in hectors"}
+                    placeholder={""}
+                    type={"number"}
+                    outlineColor={
+                      type === "seller"
+                        ? "outline-green-700"
+                        : "outline-blue-600"
+                    }
+                    // value={formData.brandName}
+                    // setFormData={setFormData}
+                    // toUpdate={"brandName"}
                   />
                 )}
               </>
