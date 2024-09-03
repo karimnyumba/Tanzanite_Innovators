@@ -12,7 +12,6 @@ const review = require("./routes/review");
 const order = require("./routes/order");
 const faq = require("./routes/faq");
 const graph = require("./routes/graph.js");
-const ai = require("./routes/ai.js");
 const auth = require("./routes/auth");
 
 const PORT = 8080;
@@ -46,7 +45,6 @@ app.use("/reviews", review);
 app.use("/order", order);
 app.use("/faqs", faq);
 app.use("/graph", graph);
-app.use("/ai", ai);
 
 server.listen(PORT, () => {
   console.log(`Server is running on PORT: ${PORT}`);

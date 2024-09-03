@@ -12,7 +12,7 @@ services:
   web:
     build: .
     ports:
-      - "3000:3000"
+      - "5080:5080"
     depends_on:
       - mongo
     environment:
