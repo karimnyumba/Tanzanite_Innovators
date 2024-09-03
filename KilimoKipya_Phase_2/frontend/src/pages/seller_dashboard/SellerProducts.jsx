@@ -78,7 +78,7 @@ function SellerProducts() {
         <div className="min-w-full py-2">
           {isDataFetching ? (
             <TableSkeleton />
-          ) : data.length === 0 ? (
+          ) : data?.length === 0 ? (
             <EmptyStateText text="Your seller dashboard currently does not display any products. To start selling, kindly add your products by navigating to the 'Add Product' section." />
           ) : (
             <table className="text-center text-sm font-light w-full">
@@ -123,7 +123,7 @@ function SellerProducts() {
                 </tr>
               </thead>
               <tbody>
-                {data.map((item, index) => (
+                {data?.map((item, index) => (
                   <tr
                     className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 text-center"
                     key={index}
@@ -158,7 +158,7 @@ function SellerProducts() {
                     <td className=" px-6 py-4 max-w-sm truncate hover:whitespace-normal">
                       Rs. {item.pricePerUnit}/{item.measuringUnit}
                     </td>
-                    <td className=" px-6 py-4 max-w-sm truncate hover:whitespace-normal">
+                    <td className="px-6 py-4 max-w-sm truncate hover:whitespace-normal">
                       {item.description}
                     </td>
                     <td className=" px-6 py-4">

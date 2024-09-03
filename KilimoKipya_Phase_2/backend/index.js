@@ -14,7 +14,7 @@ const faq = require("./routes/faq");
 const graph = require("./routes/graph.js");
 const auth = require("./routes/auth");
 
-const PORT = 8080;
+
 const app = express();
 
 // app.use(cors({
@@ -45,6 +45,8 @@ app.use("/reviews", review);
 app.use("/order", order);
 app.use("/faqs", faq);
 app.use("/graph", graph);
+
+const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
   console.log(`Server is running on PORT: ${PORT}`);
