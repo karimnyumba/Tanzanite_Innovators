@@ -16,6 +16,10 @@ router.post(
 // Get Product Data By Category
 router.get("/category/:category", productController.getProductDataByCategory);
 
+
+// Get Product Data By Category
+router.get("/all", productController.getAllProduct);
+
 // Get Product Dashboard Data By Id
 router.get("/dashboard/:productId", productController.getProductDashboardData);
 

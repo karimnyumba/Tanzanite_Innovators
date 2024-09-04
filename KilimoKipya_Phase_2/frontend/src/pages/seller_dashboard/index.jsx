@@ -69,7 +69,7 @@ const NewSellerDashboard = () => {
               setCookie("brandName", "", {expires: new Date(0) });
 
               navigate("/");
-              notify("Seller Logged Out", "info");
+              notify("Farmer Logged Out", "info");
             }}
           />
         </div>

@@ -78,6 +78,17 @@ const getProductDashboardData = async (req, res) => {
   }
 };
 
+// Get Product Dashboard Data
+const getAllProduct = async (req, res) => {
+  try {
+    const data = await Product.find().lean();
+    res.status(200).send(data);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ message: "Something went wrong!"  });
+  }
+};
+
 // Get Product Stocks By Id
 const getProductStocksById = async (req, res) => {
   try {
@@ -292,4 +303,5 @@ module.exports = {
   getProductStocksById,
   getProductDashboardData,
   getMainProductDataById,
+  getAllProduct
 };

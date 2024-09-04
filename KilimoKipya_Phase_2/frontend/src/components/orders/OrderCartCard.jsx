@@ -31,13 +31,13 @@ function OrderCartCard({item}) {
         </div>
         <div className="flex justify-between space-x-8 items-start w-full">
           <p className="text-base  xl:text-lg leading-6">
-            Rs.{item.pricePerUnit}/{item.unit}
+            Tzs.{item.pricePerUnit}/{item.unit}
           </p>
           <p className="text-base  xl:text-lg leading-6 text-gray-800">
             {item.qty}{item.unit}
           </p>
           <p className="text-base  xl:text-lg font-semibold leading-6 text-gray-800">
-            Rs.{item.currentPrice}
+          Tzs.{item.currentPrice}
           </p>
         </div>
       </div>

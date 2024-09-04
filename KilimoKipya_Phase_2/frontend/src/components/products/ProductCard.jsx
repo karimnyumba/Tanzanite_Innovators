@@ -9,7 +9,7 @@ function ProductCard({ data }) {
 
   const goToDetailsPage = () => {
     dispatch(addProductData(data));
-    navigate(`details/${data._id}`);
+    navigate(`/category/${data?.category}/details/${data._id}`);
   };
 
   return (
@@ -22,22 +22,22 @@ function ProductCard({ data }) {
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
         <img
           className="lg:h-48 h-28 w-full object-cover object-center"
-          src={data.image}
+          src={data?.image}
           alt="product"
         />
         <div className="px-3 md:px-6 pt-3 md:pt-6 pb-1 md:pb-4">
           <h1 className="title-font text-base md:text-lg font-medium text-gray-900 mb-1">
-            {data.name}
+            {data?.name}
           </h1>
           <h2 className="text-xs mb-1 md:mb-2 font-medium text-gray-400">
-            BRAND: {data.brand}
+            BRAND: {data?.brand}
           </h2>
           <p className="mb-1 text-sm md:text-base text-red-500 font-semibold">
-            Rs.{data.pricePerUnit}/{data.measuringUnit}
+            Tzs.{data?.pricePerUnit}/{data?.measuringUnit}
           </p>
           <h2 className="text-xs title-font font-medium text-gray-400 mb-2">
-            Minimum Order Quantity: {data.minimumOrderQuantity}
-            {data.measuringUnit}
+            Minimum Order Quantity: {data?.minimumOrderQuantity}
+            {data?.measuringUnit}
           </h2>
           {/* <p className="leading-relaxed mb-3 font-semibold text-red-500">
             <i className="fa-solid fa-location-dot text-red-500 mr-1"></i>
