@@ -67,7 +67,7 @@ function SellerFAQs() {
       <Heading text={"Your FAQs"} textAlign="text-left" />
       {isDataFetching ? (
         <FAQSellerSkeleton />
-      ) : unansweredFAQ.length === 0 && answeredFAQ.length === 0 ? (
+      ) : unansweredFAQ?.length === 0 && answeredFAQ?.length === 0 ? (
         <EmptyStateText text="Looks like your FAQ section is empty. No questions yet! But don't worry, once users start asking about your products, you'll find them here." />
       ) : (
         <div className="px-4 mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
