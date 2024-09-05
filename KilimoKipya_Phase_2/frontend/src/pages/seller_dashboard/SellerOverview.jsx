@@ -30,7 +30,7 @@ function SellerOverview() {
       <Heading text={"Visualize Your Sales"} textAlign="text-left" />
       {isLoading ? (
         <GraphSkeleton noOfBoxes={2} />
-      ) : dateVsSales.length === 0 ? (
+      ) : dateVsSales?.length === 0 ? (
         <EmptyStateText text="No orders have been placed. Check back soon!" />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pb-4 px-4">
