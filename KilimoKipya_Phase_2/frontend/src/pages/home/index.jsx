@@ -246,7 +246,7 @@ function Home() {
             <div className="grid gap-2 md:gap-8  grid-cols-2 lg:grid-cols-4 w-full mx-auto" >
             {isLoading && <ProductSkeleton />}
             {!isLoading &&
-              filteredProducts
+              (filteredProducts || [])
                 .slice(0, page * productsPerPage)
                 .map((product) => (
                   <ProductCard key={product.id} data={product} />
