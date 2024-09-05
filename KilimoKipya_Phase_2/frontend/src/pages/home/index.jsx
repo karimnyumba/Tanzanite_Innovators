@@ -37,19 +37,19 @@ function Home() {
     let filtered = productData;
 
     if (searchQuery) {
-      filtered = filtered.filter((product) =>
+      filtered = (filtered||[]).filter((product) =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
 
     if (searchLocation) {
-      filtered = filtered.filter((product) =>
+      filtered = (filtered||[]).filter((product) =>
         product.location.toLowerCase().includes(searchLocation.toLowerCase())
       );
     }
 
     if (searchCategory) {
-      filtered = filtered.filter((product) =>
+      filtered = (filtered||[]).filter((product) =>
         product.category.toLowerCase().includes(searchCategory.toLowerCase())
       );
     }
