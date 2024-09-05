@@ -98,21 +98,7 @@ function LoginAndSignup() {
                     toUpdate={"brandName"}
                   />
                 )}
-                           {type === "seller" && (
-                  <InputTag
-                    label={"Location"}
-                    placeholder={"Tanzania"}
-                    type={"text"}
-                    outlineColor={
-                      type === "seller"
-                        ? "outline-green-700"
-                        : "outline-blue-600"
-                    }
-                    value={formData.brandName}
-                    setFormData={setFormData}
-                    toUpdate={"brandName"}
-                  />
-                )}
+                
                      {type === "seller" && (
                   <InputTag
                     label={"Farm size in hectors"}
