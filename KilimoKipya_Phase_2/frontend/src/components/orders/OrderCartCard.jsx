@@ -18,11 +18,11 @@ function OrderCartCard({item}) {
           </h3>
           <div className="flex justify-start items-start flex-col space-y-2">
             <p className="text-sm  leading-none text-gray-800">
-              <span className=" text-gray-300">Brand: </span>{" "}
+              <span className=" text-gray-500">Brand: </span>{" "}
               {item.brand}
             </p>
             <p className="text-sm  leading-none text-gray-800">
-              <span className=" text-gray-300">
+              <span className=" text-gray-500">
                 Minimum Order Quantity:{" "}
               </span>{" "}
               {item.minQty}{item.unit}
@@ -31,13 +31,13 @@ function OrderCartCard({item}) {
         </div>
         <div className="flex justify-between space-x-8 items-start w-full">
           <p className="text-base  xl:text-lg leading-6">
-            Tzs.{item.pricePerUnit}/{item.unit}
+            TZS {item.pricePerUnit}/{item.unit}
           </p>
           <p className="text-base  xl:text-lg leading-6 text-gray-800">
             {item.qty}{item.unit}
           </p>
           <p className="text-base  xl:text-lg font-semibold leading-6 text-gray-800">
-          Tzs.{item.currentPrice}
+          TZS {item.currentPrice}
           </p>
         </div>
       </div>
