@@ -21,11 +21,11 @@ function Hero() {
     <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
       Connecting Farmers and Consumers - Bringing Fresh Produce to Your Doorstep!
     </p>
-    <div className="mt-6">
+    {/* <div className="mt-6">
       <button className="text-base font-semibold bg-green-800 p-2 px-4 rounded-md text-white hover:bg-green-400">
         Connect
       </button>
-    </div>
+    </div> */}
   </div>
 </div>
 

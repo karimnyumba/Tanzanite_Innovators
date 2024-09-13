@@ -43,8 +43,12 @@ function Home() {
     }
 
     if (searchLocation) {
-      filtered = (filtered||[]).filter((product) =>
-        product.location.toLowerCase().includes(searchLocation.toLowerCase())
+      filtered = (filtered||[]).filter((product) =>{
+        const location = product.location ? `${product.location.latitude},${product.location.longitude}` : ""
+      
+
+        location.toLowerCase().includes(searchLocation.toLowerCase())
+      }
       );
     }
 
@@ -244,13 +248,19 @@ function Home() {
             <div className="col-span-12 md:col-span-9 flex flex-wrap gap-7 px-3" >  <Category/> </div>:
             <div className="col-span-12 md:col-span-9 px-3" >
             <div className="grid gap-2 md:gap-8  grid-cols-2 lg:grid-cols-4 w-full mx-auto" >
-            {isLoading && <ProductSkeleton />}
+            {isLoading && <div><ProductSkeleton noOfBoxes={8} /></div>}
             {!isLoading &&
               (filteredProducts || [])
                 .slice(0, page * productsPerPage)
                 .map((product) => (
                   <ProductCard key={product.id} data={product} />
                 ))}
+                {
+                  filteredProducts.length === 0 && <div className="  text-gray-600  text-lg flex justify-center items-center transform translate-x-56 translate-y-1/2">
+
+                  <p className="  ">No Product Found!</p>
+                  </div>
+                }
           </div>
           </div>
            }
