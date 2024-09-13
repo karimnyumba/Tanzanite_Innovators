@@ -44,10 +44,11 @@ function Home() {
 
     if (searchLocation) {
       filtered = (filtered||[]).filter((product) =>{
-        const location = product.location ? `${product.location.latitude},${product.location.longitude}` : ""
+    
+        const location = product.location.locationName || "";
       
 
-        location.toLowerCase().includes(searchLocation.toLowerCase())
+        return location.toLowerCase().includes(searchLocation.toLowerCase())
       }
       );
     }
