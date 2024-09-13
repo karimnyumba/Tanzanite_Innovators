@@ -5,7 +5,7 @@ import ProductSkeleton from "../../components/skeleton/ProductSkeleton";
 import EmptyStateText from "../../components/empty_state/EmptyStateText";
 import useProducts from "../../hooks/products/useProducts";
 
-function Product() {
+function  Product() {
   const { type } = useParams();
   const products_per_page = 4;
 
