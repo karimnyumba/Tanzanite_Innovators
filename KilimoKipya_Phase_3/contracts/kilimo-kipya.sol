@@ -1,4 +1,4 @@
-  // SPDX-License-Identifier: MIT
+ // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
 contract KilimoKipya {
@@ -63,6 +63,8 @@ contract KilimoKipya {
     uint public productCounter;
     uint256 public totalProducts;
     address public owner;
+    Farmer [] farmersArray;
+    
 
     mapping(uint => Product) public products;
     mapping(address => Farmer) public farmers;
@@ -110,7 +112,9 @@ contract KilimoKipya {
     
     function registerFarmer(string memory _farmeruuid) public {
         require(bytes(farmers[msg.sender].farmerUUID).length == 0, "Farmer already registered");
+        
         farmers[msg.sender] = Farmer(msg.sender,_farmeruuid, 0, new uint[](0));
+        farmersArray.push  (farmers [msg.sender]);
     }
  
     function registerBank(string memory _bankuuid) public {
@@ -160,7 +164,8 @@ contract KilimoKipya {
         emit ProductAdded(productCounter, _name, _origin, "", msg.sender);
         emit ProductRegistered(productCounter, msg.sender);
     }
- 
+
+   
     
     function transferProduct(uint _productId, address _newOwner) public onlyRegisteredProduct(_productId) {
         require(products[_productId].currentOwner == msg.sender, "Not the owner");
@@ -194,7 +199,12 @@ contract KilimoKipya {
         }
     }
 
-  
+   
+    function grantCredit(address _farmer, uint _amount) public onlyBank {
+        farmers[_farmer].creditRating += _amount;
+
+        emit CreditGranted(_farmer, _amount, block.timestamp);
+    }
 
   
     function issueInsurance(address _farmer, uint _coverageAmount, string memory _coverageDetails) public onlyBank {
@@ -254,6 +264,11 @@ contract KilimoKipya {
 
  
  
+    function getInsurancePolicy(address _farmer) public view returns (uint, string memory, bool) {
+        Insurance memory policy = insurancePolicies[_farmer];
+        return (policy.coverageAmount, policy.coverageDetails, policy.active);
+    }
+
    
     function getCertifierDetails(address _certifierAddress) public view returns (
         string memory certifierName,
@@ -261,6 +276,11 @@ contract KilimoKipya {
     ) {
         QualityCertifier storage certifier = certifiers[_certifierAddress];
         return (certifier.certifierName, certifier.certifierLicense);
+    }
+
+    function returnAlltheFarmers () public view returns (Farmer [] memory) {
+
+        return farmersArray;
     }
 
 }
