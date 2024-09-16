@@ -1,0 +1,143 @@
+/* Sidebar  */
+#sidebarlayout {
+    grid-area: sidebar;
+    height: 100%;
+    background-color: #4CAF50;
+    overflow-y: auto;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  
+  .sidebarlayout-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px 0px 30px;
+    margin-bottom: 30px;
+  }
+  
+  .sidebarlayout-title > span {
+    display: none;
+  }
+  
+  .sidebarlayout-brand {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .sidebarlayout-list {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .sidebarlayout-list-item {
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
+  }
+  
+  .sidebarlayout-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+  
+  .sidebarlayout-list-item > a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .sidebarlayout-responsive {
+    display: inline !important;
+    position: absolute;
+    /*
+      we want the z-index of the sidebar higher so that
+      the charts are not showing over the sidebar 
+      on small screens
+    */
+    z-index: 12 !important;
+  }
+
+  .side-logo{
+    color: #fff;
+  }
+
+/* End Sidebar  */
+
+/* For All */
+.side_icon {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 20px;
+}
+.side_icon_header {
+  vertical-align: middle;
+  line-height: 1px;
+  font-size: 26px;
+  color: #fff;
+}
+.side_icon, .side_icon_header {
+  margin-right: 5px;
+}
+
+.side_close_icon {
+  color: #fff;
+  margin-left: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'sidebar header header header'
+      'sidebar main main main';
+    height: 100vh;
+  }
+
+  /* Medium <= 992px */
+  
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'header'
+      'main';
+  }
+
+  #sidebarlayout {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  .sidebarlayout-title > span {
+    display: inline;
+  }
+}
+/* Small <= 768px */
+  
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+/* Extra Small <= 576px */
+
+@media screen and (max-width: 576px) {
+  .hedaer-left {
+    display: none;
+  }
+}

@@ -10,6 +10,13 @@ const useEmailAuth = () => {
   const handleSignup = async (type, formData) => {
     try {
       await sendRequest(SIGNUP(type), "POST", formData);
+      if (type === "seller") {
+        // navigate("/sellerdashboard");
+      }
+      else {
+        navigate("/account/user");
+      }
+      
     } catch (error) {
       console.log(error);
     }

@@ -33,8 +33,8 @@ function LoginAndSignup() {
     if (isSignInForm) {
       setFormData((prevData) => ({
         ...prevData,
-        email: "jaloh53056@jahsec.com",
-        password: "12345678",
+        email: "",
+        password: "",
       }));
     } else {
       setFormData((prevData) => ({ ...prevData, email: "", password: "" }));
@@ -98,21 +98,7 @@ function LoginAndSignup() {
                     toUpdate={"brandName"}
                   />
                 )}
-                           {type === "seller" && (
-                  <InputTag
-                    label={"Location"}
-                    placeholder={"Tanzania"}
-                    type={"text"}
-                    outlineColor={
-                      type === "seller"
-                        ? "outline-green-700"
-                        : "outline-blue-600"
-                    }
-                    value={formData.brandName}
-                    setFormData={setFormData}
-                    toUpdate={"brandName"}
-                  />
-                )}
+                
                      {type === "seller" && (
                   <InputTag
                     label={"Farm size in hectors"}
@@ -169,20 +155,11 @@ function LoginAndSignup() {
 
             {isSignInForm ? (
               <div className="text-xs font-medium text-rose-600">
-                *In case you don't want to create an account, you can use the
-                following credentials to login: <br />
-                Email: jaloh53056@jahsec.com <br />
-                Password: 12345678
+            
               </div>
             ) : (
               <div className="text-xs font-medium text-rose-600">
-                *It is recommended to use temporary mail for creating account.{" "}
-                <Link
-                  className="underline"
-                  to={"https://temp-mail.org/en/10minutemail"}
-                >
-                  Click here to go to 10 minutes mail
-                </Link>
+            
               </div>
             )}
           </form>
