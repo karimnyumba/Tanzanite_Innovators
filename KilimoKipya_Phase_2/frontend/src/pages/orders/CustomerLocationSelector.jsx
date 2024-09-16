@@ -11,6 +11,7 @@ const CustomerLocationSelector = ({
 }) => {
   const [latitude, setLatitude] = React.useState(0);
   const [longitude, setLongitude] = React.useState(0);
+  const [locationName, setLocationName] = React.useState("");
 
   return (
     <div className="bg-gray-50  w-full xl:w-[500px] flex justify-between items-center md:items-start px-4 py-6 md:p-6 xl:p-8 flex-col">
@@ -23,8 +24,10 @@ const CustomerLocationSelector = ({
                   Your Selected Location
                 </p>
                 <div>
-                  <div>Latitude: {customerLatitude}</div>
-                  <div>Longitude: {customerLongitude}</div>
+                <p className="leading-relaxed mb-3  text-red-500">
+            <i className="fa-solid fa-location-dot text-red-500 mr-1"></i>
+            {locationName}
+          </p>
                 </div>
               </div>
             </div>
@@ -45,6 +48,7 @@ const CustomerLocationSelector = ({
                   longitude={longitude}
                   setLatitude={setLatitude}
                   setLongitude={setLongitude}
+                  setLocationName={setLocationName}
                 />
               </div>
             </div>

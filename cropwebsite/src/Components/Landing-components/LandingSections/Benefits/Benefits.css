@@ -1,0 +1,30 @@
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .benefit {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    color: #1d1c1c;
+  }
+  
+  .benefit img {
+    width: 70px; /* Adjust size as needed */
+    height: 70px; /* Adjust size as needed */
+    margin-bottom: 10px;
+  }
+  
+  .benefit h3 {
+    margin-bottom: 10px;
+    color: #676767
+  }
+  
+  .benefit p {
+    font-size: 14px;
+    color: #676767
+  }
+  

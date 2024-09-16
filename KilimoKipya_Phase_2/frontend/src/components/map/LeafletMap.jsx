@@ -11,7 +11,7 @@ import "leaflet/dist/leaflet.css";
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
 import "./../../../node_modules/leaflet-geosearch/dist/geosearch.css";
 import L from "leaflet";
-import pin from './../../assets/pin.png'
+import pin from './../../assets/pin.png';
 
 function LeafletMap({
   width = "w-screen",
@@ -21,23 +21,38 @@ function LeafletMap({
   longitude,
   setLatitude,
   setLongitude,
+  setLocationName, // Pass this function to store the location name
 }) {
-  // const [position, setPosition] = useState({
-  //   latitude: 0,
-  //   longitude: 0,
-  // });
-
-  // Create GeoSearchControl outside the component
-  const searchControl = new GeoSearchControl({
+  const searchControl = useMemo(() => new GeoSearchControl({
     provider: new OpenStreetMapProvider(),
     style: "bar",
     notFoundMessage: "Sorry, that address could not be found.",
-  });
+    autoCompleteDelay: 250,
+    retainZoomLevel: true,
+    animateZoom: true,
+  }), []);
 
   function AddSearchControlToMap() {
     const map = useMap();
+    
     useEffect(() => {
+      // Add the search control to the map
       map.addControl(searchControl);
+      
+      // Listen to the search box result event
+      map.on('geosearch/showlocation', (result) => {
+        const { x, y, label } = result.location;
+        console.log(`Searched Location: Latitude ${y}, Longitude ${x}, Label: ${label}`);
+        
+        // Update the latitude, longitude, and locationName states
+        setLatitude(y);
+        setLongitude(x);
+        setLocationName(label);
+      });
+
+      return () => {
+        map.removeControl(searchControl);
+      };
     }, [map]);
 
     return null;
@@ -47,11 +62,23 @@ function LeafletMap({
     const map = useMap();
 
     useMapEvents({
-      click: (event) => {
+      click: async (event) => {
         const { lat, lng } = event.latlng;
         console.log(`Selected Location: Latitude ${lat}, Longitude ${lng}`);
         setLatitude(lat);
         setLongitude(lng);
+
+        // Fetch location name using reverse geocoding API
+        const response = await fetch(
+          `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&addressdetails=1`
+        );
+        const data = await response.json();
+        
+        const locationName = data.display_name || "Unknown location";
+        console.log(`Location Name: ${locationName}`);
+
+        // Set the location name
+        setLocationName(locationName);
       },
     });
 
@@ -86,7 +113,9 @@ function LeafletMap({
             shadowSize: [41, 41],
           })
         }
-      ></Marker>
+      >
+        <Popup>{`Location: ${latitude}, ${longitude}`}</Popup>
+      </Marker>
     </MapContainer>
   );
 }

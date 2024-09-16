@@ -26,8 +26,8 @@ const BarGraph = ({ data, color, xKey, yKey, title = "Graph Title" }) => {
         />
         <YAxis
           axisLine={{ stroke: color, strokeWidth: 2 }}
-          tick={{ fill: color, fontSize: "12px" }}
-          tickFormatter={(tick) => `Rs.${tick}`}
+          tick={{ fill: color, fontSize: "10px" }}
+          tickFormatter={(tick) => `TZS.${tick}`}
         />
         <Bar
           dataKey={yKey}

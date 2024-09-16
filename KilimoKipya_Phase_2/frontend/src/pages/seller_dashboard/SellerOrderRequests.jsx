@@ -43,7 +43,7 @@ function SellerOrderRequests() {
         <div className="min-w-full py-2">
           {isLoading ? (
             <TableSkeleton />
-          ) : data.length === 0 ? (
+          ) : data?.length === 0 ? (
             <EmptyStateText text="It seems like your order request queue is currently empty. No worries, though! Keep an eye out for incoming orders—they'll pop up right here in your dashboard." />
           ) : (
             <table className="text-center text-sm font-light w-full">

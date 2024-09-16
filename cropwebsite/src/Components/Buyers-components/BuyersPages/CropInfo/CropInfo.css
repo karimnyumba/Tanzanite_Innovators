@@ -1,0 +1,60 @@
+.crop-container {
+    grid-area: main;
+    overflow-y: auto;
+    padding: 20px 20px;
+    color: #515153;
+  }
+
+  .crop-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .crop-card {
+    width: calc(25% - 20px); /* Adjust width for four cards per row */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #4CAF50; /* Solid border with your brand color */
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .crop-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .crop-card h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .crop-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .crop-card span {
+    font-style: italic;
+    color: #888;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  @media (max-width: 768px) {
+    .crop-card {
+      width: calc(50% - 20px); /* Two cards per row on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .crop-card {
+      width: 100%; /* One card per row on very small screens */
+    }
+  }

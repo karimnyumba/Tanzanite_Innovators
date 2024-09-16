@@ -11,7 +11,6 @@ import { TbLogout2 } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import { notify } from "../../utils/helper/notification";
 import SellerOverview from "./SellerOverview";
-import CropSenseAI from "./CropSenseAI";
 import {useCookies} from "react-cookie";
 
 
@@ -36,11 +35,7 @@ const links = [
     icon: <FaQq />,
     renderComponent: <SellerFAQs />,
   },
-  {
-    text: "CropSense AI",
-    icon: <FaQq />, 
-    renderComponent: <CropSenseAI />,
-  }
+
 ];
 
 const NewSellerDashboard = () => {
@@ -74,7 +69,7 @@ const NewSellerDashboard = () => {
               setCookie("brandName", "", {expires: new Date(0) });
 
               navigate("/");
-              notify("Seller Logged Out", "info");
+              notify("Farmer Logged Out", "info");
             }}
           />
         </div>
