@@ -11,7 +11,7 @@ const OrderSummary = ({ totalAmount, deliveryCharge, limitForFreeDelivery }) => 
         <div className="flex justify-between w-full">
           <p className="text-base  leading-4 text-gray-800">Subtotal</p>
           <p className="text-base  leading-4 text-gray-600">
-          Tzs.{totalAmount}.00
+          TZS {totalAmount}
           </p>
         </div>
         {/* <div className="flex justify-between items-center w-full">
@@ -28,12 +28,12 @@ const OrderSummary = ({ totalAmount, deliveryCharge, limitForFreeDelivery }) => 
             <p className="text-base  leading-4 text-green-600">FREE</p>
           ) : (
             <p className="text-base  leading-4 text-gray-600">
-              Tzs.{deliveryCharge}.00
+              TZS {deliveryCharge}
             </p>
           )}
         </div>
         <div className="text-xs w-full text-right font-semibold text-green-600">
-          *Order above Tzs.{limitForFreeDelivery}.00 for free delivery
+          *Order above TZS {limitForFreeDelivery} for free delivery
         </div>
       </div>
       <div className="flex justify-between items-center w-full">
@@ -41,10 +41,10 @@ const OrderSummary = ({ totalAmount, deliveryCharge, limitForFreeDelivery }) => 
           Total
         </p>
         <p className="text-base  font-semibold leading-4 text-gray-600">
-          Tzs.
+          TZS {" "}
           {totalAmount +
             (totalAmount >= limitForFreeDelivery ? 0 : deliveryCharge)}
-          .00
+          
         </p>
       </div>
     </div>

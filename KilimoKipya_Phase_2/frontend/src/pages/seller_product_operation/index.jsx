@@ -12,7 +12,8 @@ import useProducts from "../../hooks/products/useProducts";
 function SellerProductOperation() {
   const { operation } = useParams();
   const [cookies] = useCookies(["brandName"]);
-
+  const [locationName, setLocationName] = useState("");
+ 
   const { updateProduct, addProduct, isLoading, setIsLoading } = useProducts();
 
   const productEditData = useSelector(
@@ -54,7 +55,7 @@ function SellerProductOperation() {
   useEffect(() => {
     setFormData((prevData) => ({
       ...prevData,
-      location: { latitude: lat, longitude: long },
+      location: { latitude: lat, longitude: long, locationName },
     }));
   }, [lat, long]);
 
@@ -230,7 +231,7 @@ function SellerProductOperation() {
                     <InputTag
                       label={"Price per unit"}
                       type={"number"}
-                      placeholder={"Rs.2000"}
+                      placeholder={"TZS 2000 /="}
                       setFormData={setFormData}
                       toUpdate={"pricePerUnit"}
                       value={formData.pricePerUnit}
@@ -313,6 +314,7 @@ function SellerProductOperation() {
                   longitude={long}
                   setLatitude={setLat}
                   setLongitude={setLong}
+                  setLocationName={setLocationName}
                 />
               )}
             </div>

@@ -63,10 +63,10 @@ const PaymentCard = ({
           </div>
         </div>
         <p className="text-lg font-semibold leading-6  text-gray-800">
-        Tzs.
+        TZS {" "}
           {totalAmount +
             (totalAmount >= limitForFreeDelivery ? 0 : deliveryCharge)}
-          .00
+          
         </p>
       </div>
       <div className="w-full flex justify-center items-center">

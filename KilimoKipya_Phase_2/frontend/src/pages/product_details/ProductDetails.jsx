@@ -128,6 +128,12 @@ function ProductDetails() {
               productDashboardData?.description
             )}
           </p>
+          <div>
+          <p className="leading-relaxed mb-3 font-semibold text-red-500">
+            <i className="fa-solid fa-location-dot text-red-500 mr-1"></i>
+            {productDashboardData.location.locationName}
+          </p>
+          </div>
 
           <div className="relative overflow-x-auto my-6">
             <table className="w-full text-base text-left text-gray-500">
@@ -180,7 +186,7 @@ function ProductDetails() {
               ) : (
                 <div className="flex justify-between">
                   <h2 className="text-2xl md:text-4xl text-left mb-1 font-medium">
-                    Tzs. {productDashboardData?.pricePerUnit}/
+                    TZS {productDashboardData?.pricePerUnit} / {" "}
                     {productDashboardData?.measuringUnit}
                   </h2>
                 </div>

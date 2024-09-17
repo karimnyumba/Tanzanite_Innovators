@@ -9,6 +9,7 @@ function ProductCard({ data }) {
 
   const goToDetailsPage = () => {
     dispatch(addProductData(data));
+    console.log(data)
     navigate(`/category/${data?.category}/details/${data._id}`);
   };
 
@@ -33,16 +34,16 @@ function ProductCard({ data }) {
             BRAND: {data?.brand}
           </h2>
           <p className="mb-1 text-sm md:text-base text-red-500 font-semibold">
-            Tzs.{data?.pricePerUnit}/{data?.measuringUnit}
+            TZS {data?.pricePerUnit} / {data?.measuringUnit}
           </p>
           <h2 className="text-xs title-font font-medium text-gray-400 mb-2">
             Minimum Order Quantity: {data?.minimumOrderQuantity}
             {data?.measuringUnit}
           </h2>
-          {/* <p className="leading-relaxed mb-3 font-semibold text-red-500">
+          <p className="leading-relaxed mb-3 font-semibold text-red-500">
             <i className="fa-solid fa-location-dot text-red-500 mr-1"></i>
-            {data.location.latitude}, {data.location.longitude}
-          </p> */}
+            {data.location.locationName}
+          </p>
         </div>
       </div>
     </div>

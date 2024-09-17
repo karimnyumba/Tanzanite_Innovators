@@ -47,8 +47,8 @@ const AreaGraph = ({ lineData, color, xKey, yKey, title = "Graph Title" }) => {
         />
         <YAxis
           axisLine={{ stroke: color, strokeWidth: 2 }}
-          tick={{ fill: color, fontSize: "12px" }}
-          tickFormatter={(tick) => `Tzs.${tick}`}
+          tick={{ fill: color, fontSize: "10px" }}
+          tickFormatter={(tick) => `TZS.${tick}`}
         />
         {/* <Tooltip
             // content={<CustomTooltip yAxisUnit={yAxisUnit}/>}
