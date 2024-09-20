@@ -92,10 +92,9 @@ function Home() {
           <div className="flex flex-col lg:flex-row lg:items-center max-lg:gap-4 justify-between w-full">
             <ul className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-12">
               <li className="flex items-center cursor-pointer outline-none group">
-                <span className="font-normal text-lg leading-8  ml-2 mr-3 transition-all duration-500 ">
-                {searchCategory}
+                <span className="font-bold text-lg leading-8  ml-2 mr-3 transition-all duration-500 ">
+                Find Produce available on KilimoKipya 
                 </span>
-              {searchCategory && <span className="text-red-400 border-[1px] p-1 rounded-full">x</span>}
               </li>
               {/* <li className="flex items-center cursor-pointer outline-none group">
                 <span className="font-normal text-lg leading-8 text-black pl-2 pr-3 transition-all duration-500 group-hover:text-indigo-600">
@@ -161,7 +160,7 @@ function Home() {
           <div className="grid grid-cols-12">
             <div className="col-span-12 md:col-span-3 w-full max-md:max-w-md max-md:mx-auto">
 
-              <div className="mt-7 box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm">
+              <div className="mt-1 box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm">
                 <div className="flex items-center justify-between w-full pb-3 border-b border-gray-200 mb-7">
                   <p className="font-medium text-base leading-7 text-black ">
                     Filter Category

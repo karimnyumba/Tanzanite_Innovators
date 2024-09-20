@@ -17,6 +17,9 @@ function Navbar() {
     "brandName"
   ]);
 
+
+  console.log(cookies);
+  
   const userDropdownRef = useRef();
   const sellerDropdownRef = useRef();
 
@@ -152,7 +155,7 @@ function Navbar() {
             )}
           </div>
           }
-          { !cookies.seller_access_token &&
+       
           <div
             className="flex flex-row gap-1 justify-center items-center text-red-700 cursor-pointer"
             onClick={() => {
@@ -162,7 +165,7 @@ function Navbar() {
             <AiOutlineShoppingCart />
             <span className="text-sm font-medium hidden md:block">Cart</span>
           </div>
-          }
+          
           <div className="relative flex flex-row gap-1 justify-center items-center text-green-700 cursor-pointer">
           {/* <button className="text-base font-semibold">Connect</button> */}
         </div>

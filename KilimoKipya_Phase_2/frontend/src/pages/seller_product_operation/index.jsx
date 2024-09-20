@@ -96,13 +96,7 @@ function SellerProductOperation() {
               <h5 className="text-xl font-medium leading-normal text-neutral-800 ">
                 {operation.charAt(0).toUpperCase() + operation.slice(1)} Product
               </h5>
-              <button
-                className="text-base py-2 px-6 flex flex-row justify-center items-center text-white font-medium rounded-full cursor-pointer uppercase bg-sky-700"
-                type="submit"
-              >
-                {isLoading ? <Spinner width="w-5" color="#ffffff" /> : null}
-                <span>{operation.toUpperCase()}</span>
-              </button>
+          
             </div>
             <div className="relative py-6">
               <div className="space-y-6">
@@ -318,6 +312,16 @@ function SellerProductOperation() {
                 />
               )}
             </div>
+
+      
+         <button
+                className="text-base py-2 px-8   mt-4 w-20 text-white font-medium rounded-full cursor-pointer uppercase bg-sky-700"
+                type="submit"
+              >
+                {isLoading ? <Spinner width="w-5" color="#ffffff" /> : null}
+                <span>{operation.toUpperCase()} </span>
+              </button>
+         
           </form>
         </div>
       </div>
