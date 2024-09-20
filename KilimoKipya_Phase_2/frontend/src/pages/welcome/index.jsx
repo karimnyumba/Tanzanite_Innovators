@@ -21,15 +21,15 @@ export default function FarmersMarketplace() {
           <span className="text-black">Farmers </span>
           <span className="text-green-700">Marketplace</span>
         </h2>
-        <p className="text-white text lg:text-lg font-light my-auto">
+
+        <div className="space-y-8 self-center  lg:mb-32  ">
+        <p className="text-white text lg:text-lg font-light ">
           Connecting Farmers to the Market. Our platform empowers farmers by providing
           direct access to buyers, fostering growth, and ensuring fair trade.
         </p>
-        <div className="space-y-8 self-center  ">
-      
             <p className="text-white text-sm lg:text-base font-light my-auto">We've also got a powerful crop recommender tool to help you choose the best crops for your farm based on soil, climate, and market trends. Maximize your yields and profits with tailored insights!</p>
             <button
-          onClick={() => window.open('https://frontend-system-dusky.vercel.app/', '_blank')}
+          onClick={() => window.open('https://cfat-kilimokipya.vercel.app/', '_blank')}
           className="w-full sm:w-1/2 flex items-center justify-center gap-2 bg-black text-white px-4 py-2 rounded-lg shadow-md hover:bg-gray-800"
         >
           Try Our Crop Recommender
