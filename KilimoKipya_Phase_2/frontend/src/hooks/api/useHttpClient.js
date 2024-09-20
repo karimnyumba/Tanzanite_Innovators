@@ -4,7 +4,7 @@ import { notify } from "../../utils/helper/notification";
 import { notifyType } from "../../utils/helper/notificationType";
 import { useCookies } from "react-cookie";
 
-axios.defaults.baseURL = "http://localhost:5080/";
+axios.defaults.baseURL = "https://kilimokipya.up.railway.app/";
 // https://tanzanite-innovators.onrender.com/
 const useHttpClient = () => {
   const [isLoading, setIsLoading] = useState(false);

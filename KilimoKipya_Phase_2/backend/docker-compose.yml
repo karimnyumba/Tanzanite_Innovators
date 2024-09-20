@@ -1,22 +1,9 @@
 # docker-compose.yml
 version: '3'
 services:
-  mongo:
-    image: mongo
-    container_name: mongodb
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-
+ 
   web:
     build: .
     ports:
       - "5080:5080"
-    depends_on:
-      - mongo
-    environment:
-      - MONGO_URI=mongodb://mongo:27017/kilimokipya
-
-volumes:
-  mongo-data:
+  
