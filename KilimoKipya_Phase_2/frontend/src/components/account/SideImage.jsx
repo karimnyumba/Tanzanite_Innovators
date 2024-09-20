@@ -3,8 +3,8 @@ import useProgressiveImg from "../../hooks/image/useProgressiveImg";
 
 const SideImage = ({ type }) => {
   const [src, { blur }] = useProgressiveImg(
-    "/images/greet.jpg",
-    "/images/greet.jpg"
+    `/images/${(type==="seller")? "farmer":"greet"}.jpg`,
+  `/images/${(type==="seller")? "farmer":"greet"}.jpg`
   );
 
   return (
