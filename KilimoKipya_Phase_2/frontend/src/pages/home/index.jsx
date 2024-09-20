@@ -166,50 +166,8 @@ function Home() {
 
           <div className="grid grid-cols-12">
             <div className="col-span-12 md:col-span-3 w-full max-md:max-w-md max-md:mx-auto">
-              <div className="box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm">
-                <h6 className="font-medium text-base leading-7 text-black mb-5">
-                  Search by location
-                </h6>
 
-                <label
-                  htmlFor="location-search"
-                  className="block mb-2 text-sm font-medium text-gray-600 w-full"
-                >
-                  Zip Code
-                </label>
-                <input
-                  type="search"
-                  id="location-search"
-                  className="w-full p-2 mb-1 ps-10 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-green-500 focus:border-green-500"
-                  placeholder="Search products by location..."
-                  value={searchLocation}
-                  onChange={handleLocationChange}
-                  required
-                />
-                <button
-                  type="button"
-                  className="w-full py-2.5 flex items-center justify-center gap-2 rounded-full bg-green-600 text-white font-semibold text-xs shadow-sm shadow-transparent transition-all duration-500 hover:bg-green-700 hover:shadow-indigo-200"
-                >
-                  <svg
-                    width="17"
-                    height="16"
-                    viewBox="0 0 17 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M14.4987 13.9997L13.1654 12.6663M13.832 7.33301C13.832 10.6467 11.1457 13.333 7.83203 13.333C4.51832 13.333 1.83203 10.6467 1.83203 7.33301C1.83203 4.0193 4.51832 1.33301 7.83203 1.33301C11.1457 1.33301 13.832 4.0193 13.832 7.33301Z"
-                      stroke="white"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  Search
-                </button>
-              </div>
-
-              <div className="mt-7 box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm">
+              <div className="mt-1 box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm">
                 <div className="flex items-center justify-between w-full pb-3 border-b border-gray-200 mb-7">
                   <p className="font-medium text-base leading-7 text-black ">
                     Filter Category
