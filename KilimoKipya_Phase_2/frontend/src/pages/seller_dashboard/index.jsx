@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavItem from "../../components/seller_dashboard/NavItem";
 import { FaProductHunt } from "react-icons/fa6";
 import { PiShoppingBagOpenFill } from "react-icons/pi";
+import { FaFire } from "react-icons/fa";
 import { FaQq } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 import SellerProducts from "./SellerProducts";
@@ -12,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { notify } from "../../utils/helper/notification";
 import SellerOverview from "./SellerOverview";
 import {useCookies} from "react-cookie";
+import RecommenderTool from "./RecommenderTool";
 
 
 const links = [
@@ -35,6 +37,12 @@ const links = [
     icon: <FaQq />,
     renderComponent: <SellerFAQs />,
   },
+  {
+    text: "CRS",
+    icon: <FaFire />,
+    renderComponent: <RecommenderTool />,
+    
+  }
 
 ];
 

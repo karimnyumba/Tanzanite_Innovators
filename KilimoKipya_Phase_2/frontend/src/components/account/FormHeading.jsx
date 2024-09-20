@@ -7,7 +7,7 @@ const FormHeading = ({ type, isSignInForm }) => {
       <span
         className={`${type === "seller" ? "text-green-700" : "text-blue-600"}`}
       >
-        {type === "user" ? "User" : "Farmer"}
+        {type === "user" ? "Buyer" : "Farmer"}
       </span>{" "}
       account
     </h2>
