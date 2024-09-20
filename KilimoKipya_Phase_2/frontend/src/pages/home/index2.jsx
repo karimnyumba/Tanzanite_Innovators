@@ -84,20 +84,17 @@ function Home() {
 
   return (
     <>
-      <Hero />
-      <Link to="/products"></Link>
+      
 
       <section className="py-24 relative">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
-       
+ 
           <div className="flex flex-col lg:flex-row lg:items-center max-lg:gap-4 justify-between w-full">
-           
-          <p className="text-xl font-medium">
+         
+            <p className="text-xl font-medium">
               Find Produce available on KilimoKipya
             </p>
-
             <div className="relative w-full max-w-sm">
-            
               <form className="max-w-md mx-auto">
                 <div className="relative">
                   <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -152,7 +149,6 @@ function Home() {
                 </span>
               </li> */}
             </ul>
-
           <svg
             className="my-7 w-full"
             xmlns="http://www.w3.org/2000/svg"

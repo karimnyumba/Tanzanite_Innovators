@@ -57,6 +57,7 @@ function Navbar() {
             <span className="text-green-500 font-bold">Kipya</span>
           </span>
         </a>
+        { (cookies.seller_access_token || cookies.user_access_token) &&
         <div className="flex flex-row gap-4 md:gap-8 text-2xl md:text-3xl">
         { !cookies.seller_access_token &&
           <div
@@ -168,8 +169,9 @@ function Navbar() {
         </div>
           {openCart && <Cart setOpenCart={setOpenCart} />}
         </div>
-     
+        }
       </div>
+        
     </nav>
   );
 }

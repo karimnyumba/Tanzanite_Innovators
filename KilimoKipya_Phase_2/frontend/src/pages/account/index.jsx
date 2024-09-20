@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import InputTag from "../../components/input/InputTag";
 import SubmitButton from "../../components/button/SubmitButton";
 import FormSwitch from "../../components/account/FormSwitch";
@@ -9,8 +9,12 @@ import useEmailAuth from "../../hooks/auth/useEmailAuth";
 
 function LoginAndSignup() {
   const { type } = useParams();
+  const [searchParam, setSearchParam] = useSearchParams();
+const operation = searchParam.get("operation");
 
-  const [isSignInForm, setIsSignInForm] = useState(true);
+  const [isSignInForm, setIsSignInForm] = useState(
+    operation=== "login" ? true : false
+  );
   const { isLoading, handleSignup, handleLogin } = useEmailAuth();
 
   const [formData, setFormData] = useState({
