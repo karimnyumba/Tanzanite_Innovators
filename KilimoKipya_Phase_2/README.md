@@ -7,7 +7,7 @@ Welcome to Phase 2 of KilimoKipya, where we have developed a blockchain-powered 
 .
 ├── backend/           # Backend system implemented for the marketplace
 ├── frontend/          # User interface for both farmers and buyers
-├── web3_contracts/    # Smart contracts implementing blockchain for transparency
+├── smart-contracts/    # Smart contracts implementing blockchain for transparency
 ```
 ## Key Features
 -  Blockchain Integration: Improves transparency and traceability by allowing every transaction to be tracked back to the farmer.
